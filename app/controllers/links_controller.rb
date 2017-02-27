@@ -18,7 +18,12 @@ class LinksController < ApplicationController
 
 
   def update
-    binding.pry
+    link = current_user.links.find(params[:id])
+    return invalid_url_error unless Link.valid_url?(link_params[:url])
+    return no_title_error unless has_title?
+    link.update_attributes(link_params)
+    flash[:success] = "Link Changed!"
+    redirect_to links_path
   end
 
   private
