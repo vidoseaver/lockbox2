@@ -18,14 +18,12 @@
   </tr>
   <% @links.each do |link| %>
     <tr>
-      <%= form_for link do |f| %>
-        <td><%= f.text_field :title %></td>
-        <td><%= f.text_field :url%></td>
+        <td><%= link.title %></td>
+        <td><%= link.url%></td>
         <td><%= link.read %></td>
-        <td><%= f.submit "Submit"%> </td>
-      <% end %>
+        <td><%= button_to "Edit", edit_link_path(link[:id]), method: "get"%></td>
         <td><%= button_to "Mark as Read", api_v1_link_path(link[:id]), method: "patch"%></td>
-      </tr>
+    </tr>
   <% end %>
 </table>
 <% end %>
