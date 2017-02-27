@@ -3,6 +3,13 @@ class Api::V1::LinksController < ApplicationController
     render json: Link.top_ten_read_in_last_24_hours
   end
 
+  def create
+    return invalid_url_error unless Link.valid_url?(link_params[:url])
+    return no_title_error unless has_title?
+    link = current_user.links.create(link_params)
+    render json: link
+  end
+
   def update
     @link = Link.find(params[:id])
     @link.update_attributes(read: true)
@@ -12,7 +19,7 @@ class Api::V1::LinksController < ApplicationController
   private
 
       def link_params
-        JSON.parse(params.require(:payload), symbolize_names: true)
+        params.permit(:title, :url)
       end
 
       def invalid_url_error
