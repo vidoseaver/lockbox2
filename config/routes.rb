@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
 
-  namespace :api do
-    get 'v1/all_links'
-  end
+
 
   root to: "sessions#new"
   resources :links,     only: [:index, :create, :edit, :update]

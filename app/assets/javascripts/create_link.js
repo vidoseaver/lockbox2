@@ -29,7 +29,7 @@ function getLinkData() {
   return {title: newLinkTitle, url: newLinkUrl}
 }
   function renderLink(link){
-    $("#links-list").append( linkHTML(link) )
+    $("#links-list").prepend( linkHTML(link) )
     clearLink();
   }
 
@@ -43,14 +43,17 @@ function getLinkData() {
                   ${ link.read }
                 </p>
                 <p class="link_buttons">
+
                   <button class="mark-read">Mark as Read</button>
-                  <button class='edit-link'>Edit</button>
-                  <button class='delete-link'>Delete</button>
+
+                  <form  action="/links/${link.id}/edit">
+                    <input type="submit" value="Edit">
+                  </form>
                 </p>
               </div>`
   }
 
   function clearLink() {
-    newLinkTitle.val("");
-    newLinkUrl.val("");
+    $("#link_title").val("");
+    $("#link_url").val("");
   }
