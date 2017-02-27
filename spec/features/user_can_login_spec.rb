@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.feature "User can log in" do
   describe "as a guest when I enter my email correctly" do
     it "I am logged in and taken to the login page" do
-      user = create(:user)
+      user = User.create!(email:"vido@gmail.com", password: "password")
 
       visit root_path
 
@@ -19,7 +19,7 @@ RSpec.feature "User can log in" do
   end
   describe "as a guest when I enter my email incorrectly" do
     it "I am redirected to the login page and flashed appropriately" do
-      user = create(:user)
+      user = User.create!(email:"vido@gmail.com", password: "password")
 
       visit root_path
 
@@ -34,7 +34,7 @@ RSpec.feature "User can log in" do
   end
   describe "as a guest when I enter my password incorrectly" do
     it "I am redirected to the login page and flashed appropriately" do
-      user = create(:user)
+      user = User.create!(email:"vido@gmail.com", password: "password")
 
       visit root_path
 
