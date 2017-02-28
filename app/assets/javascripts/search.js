@@ -1,5 +1,5 @@
 $( document ).ready(function(){
-  $("#filter-s").on("keyup", function(){
+  $("#search").on("keyup", function(){
     var input = document.getElementById("search");
     var filter = input.value.toUpperCase();
     var table = document.getElementById("link-table");
