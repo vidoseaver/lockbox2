@@ -11,7 +11,7 @@ To run it:
 
 ```
 git clone git@github.com:vidoseaver/lockbox2.git.git
-cd final-hot-reads
+cd lockbox2
 rake db:create
 rake db:migrate
 rails s
