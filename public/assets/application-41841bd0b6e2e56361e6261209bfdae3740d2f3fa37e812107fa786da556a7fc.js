@@ -12189,7 +12189,7 @@ function createLink(event){
     url: "/api/v1/links",
     data: getLinkData(),
     success: function(response){
-      renderLink(response)
+      displayFailure(response)
     },
     error: function(error){
       displayFailure(error)
@@ -12221,7 +12221,7 @@ function getLinkData() {
 
                 <td class="link_read"> ${ link.read }</td>
                 <td class="link_buttons"> ${button}</td>
-                
+
                 <td>
                 <form  action="/links/${link.id}/edit">
                 <input type="submit" value="Edit">
@@ -12235,6 +12235,10 @@ function getLinkData() {
     $("#link_title").val("");
     $("#link_url").val("");
   }
+
+  function displayFailure(failureData){
+  alert(failureData.responseText);
+}
 ;
 $( document ).ready(function(){
   $("#links-list").on('click', ".mark-read", function(element){
