@@ -1,24 +1,34 @@
-# README
+# Hot Reads
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## About
 
-Things you may want to cover:
+Url Lock box is the backend to our final assessment. The basic idea is that one can visit the site. (Linked below). Users can create an account and add links they wish to read. There is various javascript filtering that you can do on the links you add and you can mark them as read or unread. It will change the database accordingly. She don't look pretty but she meets spec.
 
-* Ruby version
 
-* System dependencies
+## Setup
 
-* Configuration
+To run it:
 
-* Database creation
+```
+git clone git@github.com:vidoseaver/lockbox2.git.git
+cd final-hot-reads
+rake db:create
+rake db:migrate
+rails s
+visit http://localhost:3000/
+```
 
-* Database initialization
+To run the tests:
+```
+rspec
+```
 
-* How to run the test suite
+Productio links:
+* [Hot box](https://mighty-cliffs-80459.herokuapp.com/) (front-end)
+* [Lock box](https://warm-dawn-37097.herokuapp.com/) (back-end)
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+## Info
 
-* ...
+This app is written in Rails v5.0.0.1. Alot of the functionality is built in js with basic rails structure providing api end points.
+The database is postgresql. Tests writtenin rspec-rails. Coverage provided by simplecov.
