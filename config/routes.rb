@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+
+
   root to: "sessions#new"
   resources :links,     only: [:index, :create, :edit, :update]
   resources :sessions,  only: [:new, :create, :destroy]
@@ -7,7 +9,8 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      resources :links,     only: [:index, :update]
+      resources :links,     only: [:index, :create, :update]
+      resources :all_links, only: [:index]
     end
   end
 

@@ -41,17 +41,16 @@ gem 'valid_url'
 gem 'rack-cors', :require => 'rack/cors'
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platform: :mri
-  gem 'pry' #duh
-  gem 'launchy' #because restarting the server every time sucks
-
-  gem 'rspec-rails' #testing suite
-  gem 'capybara' #feature testing
-  gem 'factory_girl_rails' #creating items for tests
-  gem 'simplecov' #so we can tell what's being hit
-  gem 'database_cleaner' #keep it clean
-  gem 'selenium-webdriver'
+  gem 'byebug'
+  gem 'rspec-rails'
+  gem 'capybara'
+  gem 'launchy'
+  gem 'pry'
+  gem 'simplecov', :require => false
+  gem 'database_cleaner'
+  gem 'factory_girl_rails'
+  gem 'shoulda-matchers'
+  gem 'poltergeist'
 end
 
 group :development do
