@@ -35,13 +35,15 @@ function getLinkData() {
 
   function linkHTML(link) {
     if (link.read) {
+      var color = "red"
       var button = "<button id=" + link.id + " class='mark-read'>Mark as unRead</button>"
     } else {
+      var color = "green"
       var button = "<button id=" + link.id + " class='mark-read'>Mark as Read</button>"
     }
 
 
-      return `<tr class='link' data-id='${link.id}' id="link-${link.id}">
+      return `<tr class='${color}' data-id='${link.id}' id="link-${link.id}">
                 <td class='link-title'>${ link.title }</td>
                 <td class='link-url'>${ link.url }</td>
 
