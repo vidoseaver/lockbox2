@@ -41,22 +41,20 @@ function getLinkData() {
     }
 
 
-      return `<div class='link' data-id='${link.id}' id="link-${link.id}">
-                <p class='link-title'>${ link.title }</p>
-                <p class='link-url'>${ link.url }</p>
+      return `<tr class='link' data-id='${link.id}' id="link-${link.id}">
+                <td class='link-title'>${ link.title }</td>
+                <td class='link-url'>${ link.url }</td>
 
-                <p class="link_read">
-                  ${ link.read }
-                </p>
-                <p class="link_buttons">
+                <td class="link_read"> ${ link.read }</td>
+                <td class="link_buttons"> ${button}</td>
+                
+                <td>
+                <form  action="/links/${link.id}/edit">
+                <input type="submit" value="Edit">
+                </form>
+                </td>
 
-                  ${button}
-
-                  <form  action="/links/${link.id}/edit">
-                    <input type="submit" value="Edit">
-                  </form>
-                </p>
-              </div>`
+              </tr>`
   }
 
   function clearLink() {

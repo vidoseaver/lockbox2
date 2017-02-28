@@ -11,10 +11,27 @@
 <% end %>
 
 <% if @links %>
+
+<div class="input-container">
+    <p>Search:</p>
+    <input type="text" id="search" class="input-field"  placeholder="Search by name">
+    <br>
+</div>
+
 <h2>All your links</h2>
 
 <% end %>
+<table id="link-table" >
+        <tr>
+          <th class="enclosed-cells">title</th>
+          <th class="enclosed-cells">url</th>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+        <tbody id="links-list">
+        </tbody>
+      </table>
 
-<div id="links-list">
 
 </div>
