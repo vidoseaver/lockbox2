@@ -12189,7 +12189,7 @@ function createLink(event){
     url: "/api/v1/links",
     data: getLinkData(),
     success: function(response){
-      displayFailure(response)
+      renderAllLinks()
     },
     error: function(error){
       displayFailure(error)
