@@ -1,5 +1,5 @@
 $( document ).ready(function(){
-  $("#search").on("keyup", function(){
+  $("#filter-s").on("keyup", function(){
     var input = document.getElementById("search");
     var filter = input.value.toUpperCase();
     var table = document.getElementById("link-table");
@@ -16,6 +16,4 @@ $( document ).ready(function(){
       }
     }
   })
-
-
 })
