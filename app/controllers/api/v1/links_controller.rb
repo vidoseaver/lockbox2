@@ -12,8 +12,8 @@ class Api::V1::LinksController < ApplicationController
 
   def update
     @link = Link.find(params[:id])
-    @link.update_attributes(read: true)
-    redirect_to links_path
+    attribute = !@link.read
+    @link.update_attributes(read: attribute)
   end
 
   private

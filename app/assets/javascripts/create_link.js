@@ -34,6 +34,12 @@ function getLinkData() {
   }
 
   function linkHTML(link) {
+    if (link.read) {
+      var button = "<button id=" + link.id + " class='mark-read'>Mark as unRead</button>"
+    } else {
+      var button = "<button id=" + link.id + " class='mark-read'>Mark as Read</button>"
+    }
+
 
       return `<div class='link' data-id='${link.id}' id="link-${link.id}">
                 <p class='link-title'>${ link.title }</p>
@@ -44,7 +50,7 @@ function getLinkData() {
                 </p>
                 <p class="link_buttons">
 
-                  <button class="mark-read">Mark as Read</button>
+                  ${button}
 
                   <form  action="/links/${link.id}/edit">
                     <input type="submit" value="Edit">
